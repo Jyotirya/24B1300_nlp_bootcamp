@@ -1,0 +1,1 @@
+"""SciFact bootcamp foundation package."""

@@ -1,0 +1,57 @@
+{
+  "name": "Jyotirya Agrawal",
+  "roll_no": "24b1300",
+  "seed": 42,
+  "gpu_used": false,
+  "task1": {
+    "bm25_settings": "{\"b\": 0.3, \"depth\": 100, \"fields\": [\"title\", \"abstract\"], \"k1\": 1.2, \"stem\": true, \"stopwords\": true}",
+    "val_ndcg10": 0.8527081131795093
+  },
+  "task2": {
+    "general_model": "BAAI/bge-base-en-v1.5",
+    "scientific_model": "malteos/scincl",
+    "val_ndcg10_general": 0.8976479834895273,
+    "val_ndcg10_scientific": 0.7279202519390106,
+    "index_time_sec": {
+      "general": 113.10074303100004,
+      "scientific": 107.15405269899998
+    },
+    "query_latency_ms": {
+      "general": 20.857756745340623,
+      "scientific": 17.559399447199784
+    },
+    "memory_mb": {
+      "general": 987.9453125,
+      "scientific": 61.0
+    }
+  },
+  "task3": {
+    "hybrid_method": "{\"method\": \"rrf\", \"rrf_constant\": 30, \"runs\": \"bm25_general\", \"weights\": [1.0, 3.0]}",
+    "reranker_model": "BAAI/bge-reranker-base",
+    "rerank_top_k": 10,
+    "val_ndcg10_hybrid": 0.9097647087314454,
+    "val_ndcg10_rerank": 0.902815873105926,
+    "rerank_query_latency_ms": 662.8556699567854
+  },
+  "task4": {
+    "base_model": "BAAI/bge-base-en-v1.5",
+    "val_ndcg10_random_negatives": 0.8906531510732364,
+    "val_ndcg10_hard_negatives": 0.8954066128526669
+  },
+  "task5": {
+    "retriever_used": "t3_rerank",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "zero_shot_or_finetuned": "zero-shot",
+    "val_f1": 0.5739910313901344
+  },
+  "report_q1": {
+    "bm25_wins": [
+      673,
+      381
+    ],
+    "general_wins": [
+      766,
+      1311
+    ]
+  }
+}
